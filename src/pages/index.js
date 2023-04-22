@@ -38,45 +38,47 @@ function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-        <div
-          className={Styles.magicHolder}
-          style={{ background: "black", margin: 20 }}
-        >
-          <p>
-            <Typewriter
-              words={showStr}
-              loop={Infinity}
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-              // onLoopDone={handleDone}
-              // onType={handleType}
-            />
-          </p>
-          <Image
-            style={{ borderRadius: "10px" }}
-            src="/images/v2.gif"
-            alt="spaceMan"
+      <div
+        className={Styles.magicHolder}
+        style={{ background: "black", margin: 20 }}
+      >
+        <p>
+          <Typewriter
+            words={showStr}
+            loop={Infinity}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
           />
-        </div>
+        </p>
+        <Image
+          style={{ borderRadius: "10px" }}
+          src="/images/v2.gif"
+          alt="spaceMan"
+          width={450} // Provide the width property
+          height={400} // Provide the height property
+        />
+      </div>
 
-        <div className={Styles.gridContainer}>
-          <Link href="chat">
-            <div className={Styles.cardWhite}></div>
-          </Link>
-          <Link href="chat">
-            <div className={Styles.cardWhite}></div>
-          </Link>
-          <Link href="chat">
-            <div className={Styles.cardWhite}></div>
-          </Link>
-          <Link href="chat">
-            <div className={Styles.cardWhite}></div>
-          </Link>
-        </div>
-      <Footer/>
+      <div className={Styles.gridContainer}>
+        <Link href="chat">
+          <div className={Styles.cardWhite}></div>
+        </Link>
+        <Link href="chat">
+          <div className={Styles.cardWhite}></div>
+        </Link>
+        <Link href="chat">
+          <div className={Styles.cardWhite}></div>
+        </Link>
+        <Link href="chat">
+          <div className={Styles.cardWhite}></div>
+        </Link>
+      </div>
+      <Footer />
     </div>
   );
 }

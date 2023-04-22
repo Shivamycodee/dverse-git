@@ -96,6 +96,7 @@
 
 .gridContainer {
   margin-top: 5%;
+  margin-bottom: 10%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 50px;
@@ -112,13 +113,7 @@
   align-items: center;
   border-radius: 20px;
   min-height: 250px;
-  padding:80px 0px 80px 80px;
-  justify-content: space-around;
-}
-
-.magicHolder img {
-  width: 450px;
-  height: 450px;
+  padding:70px 0px 100px 70px;
 }
 
 .magicHolder p{

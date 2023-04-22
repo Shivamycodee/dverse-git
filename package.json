@@ -22,6 +22,8 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.5.0-beta.1",
     "react-dom": "18.2.0",
+    "react-modal": "^3.16.1",
+    "react-nice-avatar": "^1.4.0",
     "react-simple-typewriter": "^5.0.1",
     "react-toastify": "^9.1.2",
     "react-typewriter-hook": "^1.0.1",

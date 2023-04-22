@@ -1,0 +1,54 @@
+.profileChange{
+    width: 25%;
+    padding:17px;
+    position:fixed;
+    display: grid;
+    top:68px;
+    border-radius: 20px;
+    background: white;
+    margin:10px ;
+}
+
+.avatarList{
+    display:flex;
+    padding:17px;
+    justify-content: space-between;
+    row-gap: 30px;
+    width:355px;
+    height: 400px;
+    overflow-y:scroll;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+
+.selectedAvatar {
+  position: relative;
+    filter: blur(1.8px);
+
+}
+
+.selectedAvatar::after {
+  content: "";
+  filter: blur(3px);
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  box-shadow: 0 0 5px 5px rgba(0, 255, 0, 0.5);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+
+.userAvatar{
+  transition: all 0.3s ease-out;
+ }
+
+ .userAvatar:hover{
+   cursor:pointer;
+   transform: scale(1.05);
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   /* box-shadow: rgba(103, 255, 92, 0.3) 0px 19px 38px; */
+ }
