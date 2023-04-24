@@ -168,3 +168,14 @@
 
   
 }
+
+
+   /* chat UI  */
+
+   .blackBackground {
+  background-color: black !important;
+}
+
+.chatBox{
+  height: 89.2vh;
+}

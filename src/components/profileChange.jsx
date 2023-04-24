@@ -56,7 +56,7 @@ function ProfileChange() {
         {avatars.map((config, i) => {
           return (
             <div
-            key={i+1}
+              key={i + 1}
               onClick={() => handleAvatarClick(config)}
               className={temp && avatar === config && Styles.selectedAvatar}
             >
@@ -75,14 +75,17 @@ function ProfileChange() {
       </div>
 
       <div>
-        <InputGroup className="mb-3">
+        <InputGroup className={`mb-3 ${Styles.inputGroup}`}>
           <Form.Control
-            onChange={(e)=>setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
             placeholder="user name..."
             aria-label="user name..."
             aria-describedby="basic-addon2"
+            className={Styles.formControl}
           />
-          <InputGroup.Text id="basic-addon2">.eth</InputGroup.Text>
+          <InputGroup.Text id="basic-addon2" className={Styles.inputGroupText}>
+            .eth
+          </InputGroup.Text>
         </InputGroup>
       </div>
 

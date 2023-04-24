@@ -6,6 +6,7 @@
     top:68px;
     border-radius: 20px;
     background: white;
+    background: linear-gradient(135deg, #866ee7 0%, #ea60da 50%, #ffffff 100%);
     margin:10px ;
 }
 
@@ -19,6 +20,12 @@
     overflow-y:scroll;
     flex-wrap: wrap;
     margin-bottom: 10px;
+     scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.avatarList::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -26,6 +33,19 @@
   position: relative;
     filter: blur(1.8px);
 
+}
+
+   /* ai code  */
+.selectedAvatar::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: 0 0 0 3px #0ff3ff, 0 0 10px 5px #0ff3ff;
 }
 
 .selectedAvatar::after {
@@ -48,7 +68,70 @@
 
  .userAvatar:hover{
    cursor:pointer;
-   transform: scale(1.05);
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-   /* box-shadow: rgba(103, 255, 92, 0.3) 0px 19px 38px; */
+   /* transform: scale(1.05); */
+   transform: scale(1.1);
+   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  box-shadow: rgba(0, 255, 255, 0.4) 0px 4px 10px;
  }
+
+ /* Add a glowing effect to the avatar on hover */
+.userAvatar:not(.selectedAvatar)::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.userAvatar:not(.selectedAvatar):hover::before {
+  opacity: 1;
+  box-shadow: 0 0 0 3px #0ff3ff4d, 0 0 5px 2px #0ff3ff4d;
+}
+
+
+ /* design the scroll bar */
+
+
+ /* .avatarList::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
+} */
+
+/* .avatarList::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #AAAAAA;
+  background-image: -webkit-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.5) 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.5) 75%
+  );
+} */
+
+/* .avatarList {
+  scrollbar-width: thin;
+  scrollbar-color: #AAAAAA #F5F5F5;
+} */
+
+.inputGroup {
+  background-color: #ffffff;
+  color: #1a1a2e;
+  border-radius: 5px;
+}
+
+.inputGroup-text {
+  background-color: #ffffff;
+  border-left: none;
+  color: #1a1a2e;
+}
+
+.formControl {
+  background-color: #ffffff;
+  border-right: none;
+  color: #1a1a2e;
+}

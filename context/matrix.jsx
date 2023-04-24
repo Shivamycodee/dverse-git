@@ -6,7 +6,7 @@ export const matrixContext = React.createContext();
 const MATRIX_HOMESERVER_URL = "https://matrix.org";
 const MATRIX_ACCESS_TOKEN = "syt_ZHZlcnNl_IaknukcQuzrQMNhYULPf_3FRmJO";
 const MATRIX_USER_ID = "@dverse:matrix.org";
-const MATRIX_ROOM_ID = "!hgqKQJogzkVQUhWIcq:matrix.org";
+const UNIVERSAL_ROOM_ID = "!GjqvtAywmybnctcYFU:matrix.org";
 
 export default function MatrixContextProvider({children}) {
 
@@ -16,46 +16,72 @@ export default function MatrixContextProvider({children}) {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
+  // Room changer 
+  const [roomId, setRoomId] = useState(UNIVERSAL_ROOM_ID);
+
+  const [prvMsg,setPrvMsg] = useState();
+
 
  // wallet handle variables...
   const [address,setAddress] = useState();
 
 
  useEffect(() => {
+
    async function initializeMatrix() {
      const matrixClient = new MatrixClient({
        baseUrl: MATRIX_HOMESERVER_URL,
        accessToken: MATRIX_ACCESS_TOKEN,
        userId: MATRIX_USER_ID,
+       timelineSupport: true,
      });
 
      matrixClient.startClient({ initialSyncLimit: 10000 });
 
-     matrixClient.on("sync", (state, prevState, data) => {
-       if (state === "SYNCING" && prevState === "PREPARED") {
-         const matrixRoom = matrixClient.getRoom(MATRIX_ROOM_ID);
-         updateMessages(matrixRoom);
+    //  matrixClient.on("sync", async(state, prevState, data) => {
+    //    if (state === "SYNCING" && prevState === "PREPARED") {
+    //      const matrixRoom = matrixClient.getRoom(MATRIX_ROOM_ID);
+    //      updateMessages(matrixRoom);
 
-       }
-     });
+    //    }
+    //  });
 
-     matrixClient.on(
-       "Room.timeline",
-       (event, matrixRoom, toStartOfTimeline) => {
-         if (
-           matrixRoom.roomId === MATRIX_ROOM_ID &&
-           event.getType() === "m.room.message"
-         ) {
-           updateMessages(matrixRoom);
-         }
-       }
-     );
+    matrixClient.on(
+      "Room.timeline",
+      async (event, matrixRoom, toStartOfTimeline) => {
+        if (
+          matrixRoom.roomId === roomId &&
+          event.getType() === "m.room.message"
+        ) {
+          try {
+            const timeline = await matrixClient.getEventTimeline(
+              matrixRoom.getUnfilteredTimelineSet(),
+              event.getId(),
+              { limit: 100 }
+            );
+            const textMessages = timeline.events.filter(
+              (event) =>
+                event.getType() === "m.room.message" &&
+                event.getContent().msgtype === "m.text"
+            );
+
+           setPrvMsg(textMessages);
+          } catch (err) {
+            console.log("Error paginating the event timeline:", err);
+          }
+
+          updateMessages(matrixRoom);
+        }
+      }
+    );
+
 
      setClient(matrixClient);
    }
 
    initializeMatrix();
 
+ 
    const updateMessages = (matrixRoom) => {
      if (!matrixRoom) return;
      const newMessages = matrixRoom
@@ -63,6 +89,7 @@ export default function MatrixContextProvider({children}) {
        .getEvents()
        .filter((event) => event.getType() === "m.room.message");
      const arr = [];
+
      newMessages.map(elm =>arr.push(elm.getContent().body))
      setMessages(arr);
    };
@@ -72,11 +99,11 @@ export default function MatrixContextProvider({children}) {
        client.stopClient();
      }
    };
- }, []);
+ }, [roomId]);
 
  const sendMessage = async () => {
    if (client && message.trim() !== "") {
-     await client.sendTextMessage(MATRIX_ROOM_ID, message.trim());
+     await client.sendTextMessage(roomId, message.trim());
      setMessage("");
    }
  };
@@ -132,19 +159,14 @@ export default function MatrixContextProvider({children}) {
    const response = await client.createRoom(spaceCreationContent);
    const spaceRoomId = response.room_id;
    console.log(`➡️ : ${spaceRoomId}`);
-   try {
-     // Set the room type to m.space
-     await client.sendStateEvent(
-       spaceRoomId,
-       "m.room.type",
-       "org.matrix.msc1772.space",
-       {
-         type: "m.space",
-       }
-     );
-   } catch (e) {
-     console.log(e);
-   }
+    try {
+      // Enable encryption in the room
+      await client.sendStateEvent(spaceRoomId, "m.room.encryption", "", {
+        algorithm: "m.megolm.v1.aes-sha2",
+      });
+    } catch (e) {
+      console.log(e);
+    }
 
    return spaceRoomId;
  }
@@ -152,7 +174,17 @@ export default function MatrixContextProvider({children}) {
 
   return (
     <matrixContext.Provider
-      value={{ address, setAddress, messages, message ,setMessage,sendMessage }}
+      value={{
+        address,
+        setAddress,
+        messages,
+        message,
+        setMessage,
+        sendMessage,
+        createSpace,
+        roomId,
+        setRoomId,
+      }}
     >
       {children}
     </matrixContext.Provider>
