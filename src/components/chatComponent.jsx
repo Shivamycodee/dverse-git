@@ -3,6 +3,7 @@ import styles from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import Design from "@/styles/index.module.css";
 import { Button } from "react-bootstrap";
 import { useMatrixContext } from "../../context/matrix";
+import { useGlobalContext } from "../../context/prime";
 import {
   MainContainer,
   ChatContainer,
@@ -44,13 +45,16 @@ export default function ChatConmpnent(){
     createSpace,
     roomId,
     setRoomId,
+    setMessages,
   } = useMatrixContext();
 
-  const [currentActive,setCurrentActive] = useState("somi");
+  const {userName} = useGlobalContext()
+
+  const [currentActive,setCurrentActive] = useState(userName);
   const [roomList, setRoomList] = useState([
     {
-      name: "madara",
-      info: "universal god",
+      name: userName,
+      roomId: "!YeHVKSqvWeKjYGrtub:matrix.org",
     },
   ]);
 
@@ -74,9 +78,6 @@ export default function ChatConmpnent(){
 
     try{
 
-      
-      
-      
       const rmId = await createSpace(response);
 
       toast("yeah! room created 🚀")
@@ -86,7 +87,6 @@ export default function ChatConmpnent(){
       
       const obj = {
       name: response,
-      info:"new user added",
       roomId: rmId
     };
     
@@ -101,26 +101,47 @@ export default function ChatConmpnent(){
 
   }
   
-  
-
-  const handleDeleteRoom = ()=>{
-     localStorage.clear();
-     window.location.reload();
-  }
 
   const joinRoom = async()=>{
 
     const response = await Swal.fire({
       title: "Join Room 🏡",
-      input: "text",
-      inputLabel: "Enter Room ID",
-      showCancelButton: true,
-      inputValidator: (value) => {
-        if (!value) return "You need to write something!";
-      },
-    }).then((res) => {
-      return res.value;
+      html:
+        '<input id="swal-input1" placeHolder="Enter Room Name" class="swal2-input">' +
+        '<input id="swal-input2" placeHolder="Enter Room ID" class="swal2-input">',
+      focusConfirm: false,
+      preConfirm: async() => {
+      const roomName = document.getElementById("swal-input1").value;
+      const roomId = document.getElementById("swal-input2").value;
+
+      if (!roomName || !roomId) {
+        Swal.showValidationMessage("Both fields are required!");
+        return;
+      }else{
+      await Swal.fire({
+     title: "Success!",
+     text: "Room joined successfully.",
+     icon: "success",
+   });
+    return [roomName,roomId]
+      }
+    }
+
     });
+
+    const value = response.value;
+
+      setCurrentActive(value[0]);
+      setRoomId(value[1]);
+      console.log(value)
+      const obj = {
+        name: value[0],
+        roomId: value[1],
+      };
+
+      setRoomList([...roomList, obj]);
+
+
 
     toast("Room Joined... 🔥");
 
@@ -130,6 +151,7 @@ export default function ChatConmpnent(){
 
    setCurrentActive(name);
    setRoomId(roomId);
+   setMessages(null)
 
 
   }
@@ -143,9 +165,47 @@ export default function ChatConmpnent(){
     }
   }
 
+ let optionObj = {}
+ 
+ for(let i=0;i<roomList.length;i++){
+  const word = roomList[i].name;
+  optionObj[`${word}`] = word;
+ }
+
+
+  const handleDeleteRoom = async() => {
+
+    const value = await Swal.fire({
+      title: "Select field validation",
+      input: "select",
+      inputOptions: {
+        Rooms: optionObj
+      },
+      inputPlaceholder: "Select Room",
+      showCancelButton: true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value !== null) {
+            resolve()
+          }
+        });
+      },
+    }).then((res) => {
+      return res.value;
+    });
+
+if (value) {
+  const updatedRoomList = roomList.filter((room) => room.name !== value);
+  setRoomList(updatedRoomList);
+  Swal.fire(`Room ${value} has been deleted`)
+  // localStorage.removeItem(value);
+}
+   
+    // window.location.reload();
+
+  };
 
   useEffect(()=>{
-    
     const rmList = localStorage.getItem("userRoomList");
 
     
@@ -181,10 +241,9 @@ export default function ChatConmpnent(){
           rtl={false}
           draggable
         />
-        return{" "}
         <div
           style={{
-            height: "86vh",
+            // height: "86vh",
             position: "relative",
           }}
         >
@@ -202,7 +261,6 @@ export default function ChatConmpnent(){
                       onClick={() => handleRoomSelected(val.name, val.roomId)}
                       name={val.name}
                       lastSenderName={val.name}
-                      info={val.info}
                     >
                       <Avatar
                         src="/images/avatar/deadpool.png"
@@ -245,7 +303,7 @@ export default function ChatConmpnent(){
                   status="available"
                 />
                 <ConversationHeader.Content
-                  userName={currentActive}
+                  userName={currentActive ? currentActive:userName}
                   info="Active a mins ago"
                 />
 
@@ -268,7 +326,11 @@ export default function ChatConmpnent(){
               <MessageList>
                 <MessageSeparator content="Saturday, 30 November 2019" />
 
-                {messages.map((elm, i) => {
+                {messages ? messages.map((elm, i) => {
+                  const di =
+                    elm.slice(0, 5) == address.slice(2, 7)
+                      ? "outgoing"
+                      : "incoming";
                   return (
                     <Message
                       key={i + 1}
@@ -276,12 +338,12 @@ export default function ChatConmpnent(){
                         message: elm.slice(5).toString(),
                         sentTime: "15 mins ago",
                         sender: "Zoe",
-                        direction: "outgoing", // outgoing -- ur sending
+                        direction:di, // outgoing -- ur sending
                         position: "last",
                       }}
                     ></Message>
                   );
-                })}
+                }):null}
               </MessageList>
 
               <MessageInput
@@ -289,14 +351,15 @@ export default function ChatConmpnent(){
                 // sendDisabled="false"
                 attachButton="false"
                 // value={}
-                onChange={(value) => setMessage(address.slice(2, 7) + value)}
+                onChange={(value) => {
+                  setMessage(address.slice(2, 7) + value)
+                }}
                 onSend={() => sendHandler()}
               />
             </ChatContainer>
           </MainContainer>
           {/* chat main container ends */}
         </div>
-        ;
       </>
     );
 

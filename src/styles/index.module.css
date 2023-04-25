@@ -3,13 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   font-size: 24px;
   font-weight: bold;
 }
 
 .App-header {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +17,7 @@
   background-color: #282c34;
   color: white;
   font-size: calc(10px + 2vmin);
-  padding: 20px;
+  padding: 17px;
 }
 
 .button-grid {
@@ -75,7 +75,7 @@
 
 .cardWhite {
  cursor: pointer;
- width: 530px;
+ width: 470px;
  height: 274px;
  /* background: rgb(255, 255, 255); */
  /* background: radial-gradient(
@@ -90,6 +90,13 @@
  transition: all .2s;
 }
 
+.cardWhite img{
+  height: 100%;
+  width: 100%;
+   border-radius: 5px;
+
+}
+
 .cardWhite:hover {
  box-shadow: -12px 12px 2px -1px #ffffff; 
 }
@@ -99,7 +106,7 @@
   margin-bottom: 10%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 50px;
+  row-gap: 40px;
   justify-items: center;
 }
 

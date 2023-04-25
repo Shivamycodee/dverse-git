@@ -1,4 +1,4 @@
-import React,{useContext,useState,useEffect} from 'react'
+import React,{useContext,useState,useEffect,useRef} from 'react'
 import { MatrixClient, MatrixEvent, Room } from "matrix-js-sdk";
 
 export const matrixContext = React.createContext();
@@ -6,20 +6,29 @@ export const matrixContext = React.createContext();
 const MATRIX_HOMESERVER_URL = "https://matrix.org";
 const MATRIX_ACCESS_TOKEN = "syt_ZHZlcnNl_IaknukcQuzrQMNhYULPf_3FRmJO";
 const MATRIX_USER_ID = "@dverse:matrix.org";
-const UNIVERSAL_ROOM_ID = "!GjqvtAywmybnctcYFU:matrix.org";
+const UNIVERSAL_ROOM_ID = "!YeHVKSqvWeKjYGrtub:matrix.org";
 
 export default function MatrixContextProvider({children}) {
 
  // Matrix handle variables...
   const [client, setClient] = useState(null);
-  const [room, setRoom] = useState(null);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+
+  const [histroyFlag,setHistoryFlag] = useState(true)
+  const historyFlagRef = useRef(histroyFlag);
+
+const [messageHistory, setMessageHistory] = useState([]);
+
+
 
   // Room changer 
   const [roomId, setRoomId] = useState(UNIVERSAL_ROOM_ID);
 
   const [prvMsg,setPrvMsg] = useState();
+
+  const [lastEventId, setLastEventId] = useState("");
+
 
 
  // wallet handle variables...
@@ -28,7 +37,7 @@ export default function MatrixContextProvider({children}) {
 
  useEffect(() => {
 
-   async function initializeMatrix() {
+  async function initializeMatrix() {
      const matrixClient = new MatrixClient({
        baseUrl: MATRIX_HOMESERVER_URL,
        accessToken: MATRIX_ACCESS_TOKEN,
@@ -69,7 +78,6 @@ export default function MatrixContextProvider({children}) {
           } catch (err) {
             console.log("Error paginating the event timeline:", err);
           }
-
           updateMessages(matrixRoom);
         }
       }
@@ -83,30 +91,58 @@ export default function MatrixContextProvider({children}) {
 
  
    const updateMessages = (matrixRoom) => {
-     if (!matrixRoom) return;
+
+    if (!matrixRoom) return;
      const newMessages = matrixRoom
        .getLiveTimeline()
        .getEvents()
        .filter((event) => event.getType() === "m.room.message");
      const arr = [];
 
-     newMessages.map(elm =>arr.push(elm.getContent().body))
-     setMessages(arr);
+     newMessages.map((elm) => arr.push(elm.getContent().body));
+
+       if (historyFlagRef.current) {
+         setMessageHistory((pre)=>{return arr});
+       } else {
+       setMessages((prevMessages) => {
+            const lastMessage = prevMessages[prevMessages.length - 1];
+            if (arr[0] !== lastMessage) {
+              return [...prevMessages, arr[0]];
+            } else {
+              return prevMessages;
+            }
+          });
+       }
+
    };
 
-   return () => {
-     if (client) {
-       client.stopClient();
-     }
-   };
- }, [roomId]);
+
+
+return () => {
+  if (client) {
+    client.stopClient();
+  }
+};
+}, [roomId]);
+
+
+useEffect(() => {
+  setMessages(messageHistory);
+}, [messageHistory]);
+
+
 
  const sendMessage = async () => {
    if (client && message.trim() !== "") {
+    setHistoryFlag(false)
+     historyFlagRef.current = false;
      await client.sendTextMessage(roomId, message.trim());
      setMessage("");
    }
  };
+
+
+
 
  async function createSpace(spaceName, spaceTopic = "") {
 
@@ -178,6 +214,7 @@ export default function MatrixContextProvider({children}) {
         address,
         setAddress,
         messages,
+        setMessages,
         message,
         setMessage,
         sendMessage,

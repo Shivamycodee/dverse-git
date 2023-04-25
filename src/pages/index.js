@@ -66,16 +66,24 @@ function Home() {
 
       <div className={Styles.gridContainer}>
         <Link href="chat">
-          <div className={Styles.cardWhite}></div>
+          <div className={Styles.cardWhite}>
+            <img src="/images/coverImages/roboChat.jpg" alt="chat" />
+          </div>
+        </Link>
+        <Link href="videoCall">
+          <div className={Styles.cardWhite}>
+            <img src="/images/coverImages/videoCall01.jpg" alt="chat" />
+          </div>
         </Link>
         <Link href="chat">
-          <div className={Styles.cardWhite}></div>
+          <div className={Styles.cardWhite}>
+            <img src="/images/coverImages/videoCall02.jpg" alt="chat" />
+          </div>
         </Link>
         <Link href="chat">
-          <div className={Styles.cardWhite}></div>
-        </Link>
-        <Link href="chat">
-          <div className={Styles.cardWhite}></div>
+          <div className={Styles.cardWhite}>
+            <img src="/images/coverImages/videoCall03.jpg" alt="chat" />
+          </div>
         </Link>
       </div>
       <Footer />
