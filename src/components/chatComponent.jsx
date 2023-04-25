@@ -195,9 +195,10 @@ export default function ChatConmpnent(){
             <Sidebar position="left" scrollable={true} style={{ padding: 6 }}>
               <Search placeholder="Search..." />
               <ConversationList>
-                {roomList.map((val) => {
+                {roomList.map((val,i) => {
                   return (
                     <Conversation
+                    key={i+1}
                       onClick={() => handleRoomSelected(val.name, val.roomId)}
                       name={val.name}
                       lastSenderName={val.name}
