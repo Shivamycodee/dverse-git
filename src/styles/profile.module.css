@@ -135,3 +135,14 @@
   border-right: none;
   color: #1a1a2e;
 }
+
+
+
+
+  /* chat page style  */
+
+  
+.scrollbar-container .cs-conversation{
+  background-color: #c6e3fa !important;
+  border-radius: 10px !important;
+}

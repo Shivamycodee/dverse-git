@@ -14,17 +14,16 @@ function Footer() {
                 className="manik"
                 alt=""
               /> */}
-              <h1>🚀 ｄｖｅｒｓｅ </h1>
+              {/* <h1>🚀 ｄｖｅｒｓｅ </h1> */}
+              <h1 style={{ letterSpacing: 7 }}>🚀 DVERSE</h1>
             </div>
             <div className="logo-des">
-              <p>
+              <p className="formatted-text">
                 Welcome to Dverse, the decentralized universe where we offer a
                 range of services including data storage, chat, video calls and
                 much more. Our platform brings you decentralized solutions that
-                are designed to meet your needs. From the stars to your screen,
-                Dverse offers a unique experience that combines cutting-edge
-                technology with the power of decentralization.Join us today and 
-                experience a new level of security,privacy and efficiency.
+                are designed to meet your needs. Join us today and experience a
+                new level of security,privacy and efficiency.
               </p>
 
               <a href="#" className="btn-know">
@@ -35,26 +34,30 @@ function Footer() {
 
           <div className="office row">
             <div className="footer-header">
-              <h3>Office</h3>
+              {/* <h2>ｏｆｆｉｃｅ</h2> */}
+              <h1 style={{ letterSpacing: 7 }}>OFFICE</h1>
             </div>
             <div className="office-des">
-              {/* <p>here are <br> many variations of passages<br>of Lorem Ipsum<br>available</p> */}
-
-              <a href="#">dverse@gmail.com</a>
-
-              <p className="num">+91-9999999999</p>
+              <a href="https://www.gmail.com" target="_blank" rel="noreferrer">
+                dverse@gmail.com
+              </a>
+              <p className="num">+91-8758128274</p>
             </div>
           </div>
 
           <div className="newsletter row">
             <div className="footer-header">
-              <h3>Hey! say 👋 on...</h3>
+              {/* <h2>ｄｒｏｐ ａ 👋 ｏｎ．．．</h2> */}
+              <h4 style={{ letterSpacing: 0 }}>DROP A 👋 ON...</h4>
             </div>
             <div className="newsletter-des">
               {/* icons  */}
 
               <ul className="wrapper">
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/shivam-yadav-917863224/"
+                  target="_blank" rel="noreferrer"
+                >
                   <li className="icon linkedin">
                     <span className="tooltip">LinkedIn</span>
                     <span>
@@ -62,7 +65,7 @@ function Footer() {
                     </span>
                   </li>
                 </a>
-                <a href="#" target="_blank">
+                <a href="http://github.com/shivamycodee" target="_blank" rel="noreferrer">
                   <li className="icon github">
                     <span className="tooltip">GitHub</span>
                     <span>
@@ -70,15 +73,15 @@ function Footer() {
                     </span>
                   </li>
                 </a>
-                <a href="#" target="_blank">
+                <a href="#" target="_blank" rel="noreferrer" >
                   <li className="icon facebook">
-                    <span className="tooltip">Facebook</span>
+                    <span className="tooltip">Devfolio</span>
                     <span>
                       <i className="fab fa-facebook-f"></i>
                     </span>
                   </li>
                 </a>
-                <a href="#" target="_blank">
+                <a href="#" target="_blank" rel="noreferrer">
                   <li className="icon instagram">
                     <span className="tooltip">Instagram</span>
                     <span>
@@ -86,7 +89,7 @@ function Footer() {
                     </span>
                   </li>
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://twitter.com/VibeWeb3" target="_blank" rel="noreferrer">
                   <li className="icon twitter">
                     <span className="tooltip">Twitter</span>
                     <span>
@@ -94,11 +97,12 @@ function Footer() {
                     </span>
                   </li>
                 </a>
-                <a href="#" target="_blank">
-                  <li className="icon github">
-                    <span className="tooltip">CodePen</span>
+                <a href="https://devfolio.co/@shivam_code" target="_blank" rel="noreferrer">
+                  <li className="icon facebook">
+                    <span className="tooltip">Devfolio</span>
                     <span>
-                      <i className="fab fa-codepen"></i>
+                      {/* <i className="fab fa-codepen"></i> */}
+                      <i class="fa-solid fa-d"></i>
                     </span>
                   </li>
                 </a>
@@ -108,7 +112,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <h6 style={{ textAlign: "center" }}>build with 💖, by dverse</h6>
+        {/* <h6 style={{ textAlign: "center" }}>build with 💖, by dverse</h6> */}
         <div className="copyright">
           <p>© Copyright 2022 DVERE.</p>
         </div>

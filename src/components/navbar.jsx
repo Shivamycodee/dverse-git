@@ -72,8 +72,8 @@ function TopBar() {
             <Nav className="me-auto">
               <Nav.Link href="#docs">Docs</Nav.Link>
               <NavDropdown title="Services" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#chat">Chat</NavDropdown.Item>
-                <NavDropdown.Item href="#video-call">
+                <NavDropdown.Item href="chat">Chat</NavDropdown.Item>
+                <NavDropdown.Item href="videocall">
                   Video Call
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#stream">Stream</NavDropdown.Item>
@@ -143,14 +143,14 @@ function TopBar() {
                     setProfileFlag(true);
                   }}
                 >
-                  <span className="sp">Change Profile 👻</span>
+                  <span className="sp">Change Profile</span>
                 </button>
                 <button
                   style={{ width: "100%" }}
                   data-label="Register"
                   className="rainbow-hover"
                 >
-                  <span className="sp">Share 🤙</span>
+                  <span className="sp">Share</span>
                 </button>
               </div>
             </div>

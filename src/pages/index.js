@@ -67,22 +67,22 @@ function Home() {
       <div className={Styles.gridContainer}>
         <Link href="chat">
           <div className={Styles.cardWhite}>
-            <img src="/images/coverImages/roboChat.jpg" alt="chat" />
+            <Image height={"100%"} width={"100%"} src="/images/coverImages/roboChat.jpg" alt="chat" />
           </div>
         </Link>
-        <Link href="videoCall">
+        <Link href="videocall">
           <div className={Styles.cardWhite}>
-            <img src="/images/coverImages/videoCall01.jpg" alt="chat" />
-          </div>
-        </Link>
-        <Link href="chat">
-          <div className={Styles.cardWhite}>
-            <img src="/images/coverImages/videoCall02.jpg" alt="chat" />
+            <Image height={"100%"} width={"100%"} src="/images/coverImages/videoCall01.jpg" alt="chat" />
           </div>
         </Link>
         <Link href="chat">
           <div className={Styles.cardWhite}>
-            <img src="/images/coverImages/videoCall03.jpg" alt="chat" />
+            <Image height={"100%"} width={"100%"} src="/images/coverImages/videoCall02.jpg" alt="chat" />
+          </div>
+        </Link>
+        <Link href="chat">
+          <div className={Styles.cardWhite}>
+            <Image height={"100%"} width={"100%"} src="/images/coverImages/videoCall03.jpg" alt="chat" />
           </div>
         </Link>
       </div>

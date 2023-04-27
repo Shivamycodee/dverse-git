@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import WithLazyLoader from "@/components/withLazyLoader";
 import ChatComponent from '@/components/chatComponent'
 

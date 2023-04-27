@@ -94,8 +94,6 @@ body {
     )
     rgb(var(--background-start-rgb));
 
-    scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
 a {
@@ -549,7 +547,7 @@ a {
 }
 
 .sp {
-  background: linear-gradient(
+  /* background: linear-gradient(
       90deg,
       #866ee7,
       #ea60da,
@@ -558,7 +556,8 @@ a {
       #0ad114,
       #f05129,
       #2cca91
-    );
+    ); */
+    background: linear-gradient(135deg, #866ee7 30%, #ea60da 50%,#ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -677,7 +676,7 @@ footer{
 .office-des{
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 10px;
 }
 
 .office a{
@@ -856,6 +855,16 @@ footer{
 }
 
 
+.formatted-text {
+  font-family: Arial, sans-serif; /* Replace with your preferred font-family */
+  font-size: 16px; /* Adjust the font size */
+  line-height: 1.6; /* Adjust the line height for better readability */
+  text-align: justify; /* Justify the text to align it on both left and right */
+  max-width: 800px; /* Set a maximum width to prevent the text from extending too wide */
+  margin: 0 auto; /* Center the paragraph element within its container */
+}
+
+
  /* userAvatar */
 
  .userAvatar{
@@ -867,47 +876,55 @@ footer{
    transform: scale(1.05);
 
  }
-
-
-/* .cs-conversation__name {
-    color: #000000;
-    background-color: #000000;
-} */
-
-.cs-message-list {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    min-height: 1.25em;
-    position: relative;
-    color: rgba(0,0,0,.87);
-    /* background-color: #fff; */
-}
-
-.cs-main-container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    height: 100%;
+.cs-main-container .cs-message-list {
+    min-height: calc(100vh - 173px);
     overflow: auto;
-    border: solid 1px #000000;
-    box-sizing: border-box;
-    color: rgba(0,0,0,.87);
-    background-color: #000000;
-    font-size: 1rem;
+    max-height: calc(100vh - 173px);
 }
 
-.cs-chat-container {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    min-width: 180px;
-    color: rgba(0,0,0,.87);
-    background-color: #000000;
+
+div .cs-main-container>.cs-sidebar.cs-sidebar--left {
+    min-height: calc(100vh - 58px);
+    height: calc(100vh - 58px);
 }
 
-.styles_chatBox__nbIGS {
-    height: 100.2vh;
+
+  /* chat messages scroll bar  */
+
+  .cs-message-list::-webkit-scrollbar {
+  width: 12px; /* width of the scrollbar */
 }
+
+.cs-message-list::-webkit-scrollbar-track {
+  background-color: #f4f4f4; /* color of the track */
+}
+
+.cs-message-list::-webkit-scrollbar-thumb {
+  background-color: #c6e3fa; /* color of the thumb */
+  border-radius: 10px; /* roundness of the thumb */
+}
+
+.cs-message-list::-webkit-scrollbar-thumb:hover {
+  background-color: #a9d0f5; /* color of the thumb on hover */
+}
+
+
+
+  /* body scroller  */
+
+
+  /* Apply the style to the entire body */
+body::-webkit-scrollbar {
+  width: 0px;                 /* set width to 0 to remove the scrollbar from body ⭐⭐ */
+  background-color: rgb(15, 23, 42); 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Color of the scrollbar thumb */
+  border-radius: 2px 10px 20px 30px; /* Rounded corners for the scrollbar thumb */
+}
+
+/* If you want to apply the style to a specific element, replace 'body' with the element's class or id */
+
+
+
