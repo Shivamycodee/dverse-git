@@ -959,3 +959,135 @@ body::-webkit-scrollbar-thumb {
    top:7.5%;
    bottom:0;
   }
+
+
+
+   /* drive seciton css  */
+
+   
+  .cont{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .fileUpload{
+    /* border: 1px solid white; */
+    background-image: linear-gradient(to bottom right, #866ee7, #ea60da, #ffffff);
+    width:100%;
+    height: fit-content;
+    max-width: 40vw;
+    border-radius: 10px;
+  }
+
+  #upSection{
+    padding: 30px; 
+    display: flex;
+    flex-direction: column ;
+  }
+
+
+  #upTitle p{
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: large;
+  }
+
+
+  #upInput{
+    border: 1px dashed gray;
+    border-radius: 7px;
+    align-self: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    width:100%;
+  }
+
+  #upInput img{
+    width: 150px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  #upInput input{
+    margin: 0px 0 0px 70px ;
+    cursor:pointer;
+  }
+
+  #upBtn button{
+    width:100%;
+    margin-bottom: 2px;
+  }
+
+  
+
+
+  .drive-holder{
+    display: flex;
+    justify-content: space-around;
+    padding: 80px;
+    column-gap: 10px;
+    margin-top: 2%;
+
+  }
+
+  .data-css{
+    width: 50% !important;
+    height:430px;
+    /* background-image: linear-gradient(to bottom right, #866ee7, #ea60da, #ffffff); */
+    overflow-y:scroll;
+    border-radius: 10px;
+    
+  }
+
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+.data-css::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.data-css {
+    -ms-overflow-style: none;
+}
+
+  .cont {
+    width: 50% !important;
+  }
+
+  .table {
+    width: 100% !important;
+    margin-bottom:0 !important;
+  }
+
+
+  /* uploader css  */
+
+  form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #1475cf;
+  height: 300px;
+  width: 500px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.uploaded-row{
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #e9f0ff;
+}
+
+.upload-content{
+  display: flex;
+  align-items: center;
+}

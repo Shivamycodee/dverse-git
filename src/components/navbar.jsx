@@ -11,6 +11,7 @@ import { useGlobalContext } from "../../context/prime";
 import Avatar, { genConfig } from "react-nice-avatar";
 
 
+
 function TopBar() {
 
   
@@ -27,7 +28,22 @@ function TopBar() {
   const { address, isConnecting, isDisconnected } = useAccount();
   const [flag,setFlag] = useState(false);
 
-  // if(address) setAddress(address)
+
+   const writeContract = async()=>{
+   
+
+    // Create an instance of the contract with the signer
+    const contractWithSigner = contract.connect(signer);
+
+    // Call the wimo function with an argument
+    const wimoTx = await contractWithSigner.wimo(875812);
+    console.log("wimo transaction:", wimoTx);
+
+    // Wait for the transaction to be mined
+    const receipt = await wimoTx.wait();
+    console.log("wimo transaction receipt:", receipt);
+  }
+
 
   useEffect(() => {
     if (address) {
@@ -84,15 +100,17 @@ function TopBar() {
                 <NavDropdown.Item href="chat">Chat</NavDropdown.Item>
                 <NavDropdown.Item href="videocall">Video Call</NavDropdown.Item>
                 <NavDropdown.Item href="livestream">Stream</NavDropdown.Item>
-                <NavDropdown.Item href="#store">Store</NavDropdown.Item>
+                <NavDropdown.Item href="drive">Store</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="#roadmap">Roadmap</Nav.Link>
+              
             </Nav>
             <Nav>
               <ConnectButton></ConnectButton>
               <Nav.Link href="#profile" className="ml-2"></Nav.Link>
             </Nav>
           </Navbar.Collapse>
+
           <Button
             style={{ borderRadius: "12px" }}
             variant="outline-dark"

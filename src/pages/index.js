@@ -82,7 +82,7 @@ function Home() {
             <Image height={10000} width={10000} src="/images/coverImages/liveStream.jpg" alt="chat" />
           </div>
         </Link>
-        <Link href="chat">
+        <Link href="drive">
           <div className={Styles.cardWhite}>
             <Image height={10000} width={10000} src="/images/coverImages/videoCall03.jpg" alt="chat" />
           </div>
