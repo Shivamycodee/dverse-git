@@ -928,3 +928,34 @@ body::-webkit-scrollbar-thumb {
 
 
 
+  /* live stream css  */
+
+  .streamPlayer-controler{
+    display: flex;
+    /* align-items: center; */
+    padding: 20px;
+    margin-top: 2%;
+    margin-left: 4%;
+    /* justify-content: space-evenly; */
+  }
+
+  .livestream-all-accessControl{
+    width:60%;
+    text-align: center;
+    padding: 16px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom right, #866ee7, #ea60da, #ffffff);
+  }
+
+  .livestream-accessControl button{
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+ .livestream-chat{
+   position:absolute;
+   width:25%; 
+   right: 0;
+   top:7.5%;
+   bottom:0;
+  }

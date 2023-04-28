@@ -27,7 +27,14 @@ function TopBar() {
   const { address, isConnecting, isDisconnected } = useAccount();
   const [flag,setFlag] = useState(false);
 
-  if(address) setAddress(address)
+  // if(address) setAddress(address)
+
+  useEffect(() => {
+    if (address) {
+      setAddress(address);
+    }
+  }, [address, setAddress]);
+
 
   // handle Offcanvas --- profile...
 
@@ -70,13 +77,13 @@ function TopBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#docs">Docs</Nav.Link>
+              <Nav.Link href="https://shivams-organization.gitbook.io/dverse-docs/">
+                Docs
+              </Nav.Link>
               <NavDropdown title="Services" id="basic-nav-dropdown">
                 <NavDropdown.Item href="chat">Chat</NavDropdown.Item>
-                <NavDropdown.Item href="videocall">
-                  Video Call
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#stream">Stream</NavDropdown.Item>
+                <NavDropdown.Item href="videocall">Video Call</NavDropdown.Item>
+                <NavDropdown.Item href="livestream">Stream</NavDropdown.Item>
                 <NavDropdown.Item href="#store">Store</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="#roadmap">Roadmap</Nav.Link>
@@ -103,9 +110,11 @@ function TopBar() {
         className="user-profile-offcanvas mycanva"
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title style={{marginLeft:"35%"}}>DVERSE ID</Offcanvas.Title>
+          <Offcanvas.Title style={{ marginLeft: "35%" }}>
+            DVERSE ID
+          </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>  
+        <Offcanvas.Body>
           <div className="container">
             <div className="box">
               <span className="title">🚀 ｄｖｅｒｓｅ 🚀</span>
@@ -156,9 +165,7 @@ function TopBar() {
             </div>
           </div>
         </Offcanvas.Body>
-        {flag && profileFlag ? (
-          <ProfileChange />
-        ) : null}
+        {flag && profileFlag ? <ProfileChange /> : null}
       </Offcanvas>
     </>
   );

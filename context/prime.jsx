@@ -7,9 +7,13 @@ export default function primeProviderContext({ children }) {
   const [isLazy, setIsLazy] = useState(true);
   const [profileFlag,setProfileFlag] = useState(true);
   const [avatarConfig,setAvatarConfig] = useState()
-const [userName, setUserName] = useState();
+  const [userName, setUserName] = useState();
 
-const [pointer,setPointer] = useState();
+  const [streamTime,setStreamTime] = useState();
+
+  const [isWatch,setIsWatch] = useState(false);
+
+
 
 const getPostTime = (epoc) => {
   const date = new Date(epoc);
@@ -52,6 +56,10 @@ const getPostDate = (epoc) => {
         setUserName,
         getPostTime,
         getPostDate,
+        streamTime,
+        setStreamTime,
+        isWatch,
+        setIsWatch
       }}
     >
       {children}

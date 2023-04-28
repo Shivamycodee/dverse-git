@@ -11,6 +11,8 @@ import { useState, useEffect,useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import WithLazyLoader from '../components/withLazyLoader'
 import Footer from '../components/footer'
+import Roadmap from '../components/rodamap'
+
 
 const showStr = [
   "Welcome to Dverse! the decentralized universe! 🚀",
@@ -67,25 +69,29 @@ function Home() {
       <div className={Styles.gridContainer}>
         <Link href="chat">
           <div className={Styles.cardWhite}>
-            <Image height={"100%"} width={"100%"} src="/images/coverImages/roboChat.jpg" alt="chat" />
+            <Image height={10000} width={10000} src="/images/coverImages/roboChat.jpg" alt="chat" />
           </div>
         </Link>
         <Link href="videocall">
           <div className={Styles.cardWhite}>
-            <Image height={"100%"} width={"100%"} src="/images/coverImages/videoCall01.jpg" alt="chat" />
+            <Image height={10000} width={10000} src="/images/coverImages/videoCall01.jpg" alt="chat" />
+          </div>
+        </Link>
+        <Link href="livestream">
+          <div className={Styles.cardWhite}>
+            <Image height={10000} width={10000} src="/images/coverImages/liveStream.jpg" alt="chat" />
           </div>
         </Link>
         <Link href="chat">
           <div className={Styles.cardWhite}>
-            <Image height={"100%"} width={"100%"} src="/images/coverImages/videoCall02.jpg" alt="chat" />
-          </div>
-        </Link>
-        <Link href="chat">
-          <div className={Styles.cardWhite}>
-            <Image height={"100%"} width={"100%"} src="/images/coverImages/videoCall03.jpg" alt="chat" />
+            <Image height={10000} width={10000} src="/images/coverImages/videoCall03.jpg" alt="chat" />
           </div>
         </Link>
       </div>
+      <Roadmap/>
+      <br></br>
+      <br></br>
+      <br></br>
       <Footer />
     </div>
   );

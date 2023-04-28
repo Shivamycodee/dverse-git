@@ -93,3 +93,86 @@ mongo cluster with 8758
                       </Conversation>
                     );
                   })} */}
+
+
+
+                  <!-- stream reloader  -->
+
+                   {streamKey && playbackId ? (
+        <button
+          style={{ marginLeft: "44%", marginTop: "2%" }}
+          onClick={() => reloadPlayer()}
+          className="btn btn-outline-dark"
+        >
+          Reload
+        </button>
+      ) : null}
+
+
+
+        <!-- live chat  -->
+
+// const getChat = (chat)=>{
+
+  //   const regex = /^(.+)\?@\*!\%#(\d+)(.*)$/;
+  //   const match = chat.match(regex);
+
+  //   if (match) {
+  //     const name = match[1];
+  //     const walletAddress = match[2];
+  //     const chat = match[3];
+
+  //    alert(`${name}(${walletAddress}): ${chat}`)
+  //    return `${name}(${walletAddress}): ${chat}`;
+  //   } else {
+  //     toast.error("Chat check issue")
+  //     console.log("⚠️⚠️⚠️")
+  //     console.log(match);
+
+  //   }
+  // }
+
+
+
+
+
+   {/* <ChatContainer>
+                <MessageList style={{ marginTop: 20 }}>
+                  <MessageSeparator content="30 March 2023" />
+
+                  {streamStatus && streamTime
+                    ? (
+
+                      messages.map((elm, i) => {
+                
+                        return streamTime <= elm.timeStamp ? (
+                          <Message
+                            key={i + 1}
+                            style={{ marginBottom: 15 }}
+                            model={{
+                              message: "02:30 pm",
+                              message: `${elm.msg.slice(0, 5)}: ${elm.msg.slice(5,)}`,
+                              sentTime: getPostTime(elm.timeStamp),
+                              sender: "Zoe",
+                              direction: "incoming",
+                              position: "last",
+                            }}
+                          ></Message>
+                        ) : null;
+
+
+                      }))
+                    : null}
+                </MessageList>
+
+                <MessageInput
+                  ref={inputRef}
+                  placeholder="Type message here..."
+                  disabled={streamStatus ? false : true}
+                  attachButton="false"
+                  onChange={(value) => {
+                          setMessage(address.slice(0, 5) + value);
+                  }}
+                  onSend={() => sendHandler()}
+                />
+              </ChatContainer> */}

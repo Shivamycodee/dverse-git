@@ -4,6 +4,8 @@ import "@rainbow-me/rainbowkit/styles.css";
 import Layout from '../components/layout'
 import PrimeContextProvider from '../../context/prime'
 import MatrixContextProvider from '../../context/matrix'
+import KeyHandlerProvider from "../../context/streamHandler";
+
 
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
@@ -64,8 +66,9 @@ export { WagmiConfig, RainbowKitProvider };
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <PrimeContextProvider>
+      <PrimeContextProvider>  
         <MatrixContextProvider>
+         <KeyHandlerProvider>
 
         <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider modalSize="compact" chains={chains}>
@@ -75,6 +78,7 @@ export default function App({ Component, pageProps }) {
           </RainbowKitProvider>
         </WagmiConfig>
         
+         </KeyHandlerProvider>
         </MatrixContextProvider>
       </PrimeContextProvider>
     </>

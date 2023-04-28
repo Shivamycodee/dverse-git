@@ -26,7 +26,12 @@ function Footer() {
                 new level of security,privacy and efficiency.
               </p>
 
-              <a href="#" className="btn-know">
+              <a
+                href="https://shivams-organization.gitbook.io/dverse-docs/"
+                className="btn-know"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Know More
               </a>
             </div>
@@ -56,7 +61,8 @@ function Footer() {
               <ul className="wrapper">
                 <a
                   href="https://www.linkedin.com/in/shivam-yadav-917863224/"
-                  target="_blank" rel="noreferrer"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <li className="icon linkedin">
                     <span className="tooltip">LinkedIn</span>
@@ -65,7 +71,11 @@ function Footer() {
                     </span>
                   </li>
                 </a>
-                <a href="http://github.com/shivamycodee" target="_blank" rel="noreferrer">
+                <a
+                  href="http://github.com/shivamycodee"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <li className="icon github">
                     <span className="tooltip">GitHub</span>
                     <span>
@@ -73,7 +83,7 @@ function Footer() {
                     </span>
                   </li>
                 </a>
-                <a href="#" target="_blank" rel="noreferrer" >
+                <a href="#" target="_blank" rel="noreferrer">
                   <li className="icon facebook">
                     <span className="tooltip">Devfolio</span>
                     <span>
@@ -89,7 +99,11 @@ function Footer() {
                     </span>
                   </li>
                 </a>
-                <a href="https://twitter.com/VibeWeb3" target="_blank" rel="noreferrer">
+                <a
+                  href="https://twitter.com/VibeWeb3"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <li className="icon twitter">
                     <span className="tooltip">Twitter</span>
                     <span>
@@ -97,7 +111,11 @@ function Footer() {
                     </span>
                   </li>
                 </a>
-                <a href="https://devfolio.co/@shivam_code" target="_blank" rel="noreferrer">
+                <a
+                  href="https://devfolio.co/@shivam_code"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <li className="icon facebook">
                     <span className="tooltip">Devfolio</span>
                     <span>

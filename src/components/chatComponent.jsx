@@ -54,6 +54,7 @@ export default function ChatConmpnent(){
 
   const { userName, getPostTime, getPostDate } = useGlobalContext();
 
+
   const [currentActive,setCurrentActive] = useState(userName);
   const [roomList, setRoomList] = useState([
     {
@@ -236,7 +237,6 @@ if (value) {
   useEffect(()=>{
     const rmList = localStorage.getItem("userRoomList");
 
-    
     if(roomList.length > 1){
       if (roomList !== JSON.parse(rmList)){
         localStorage.setItem("userRoomList", JSON.stringify(roomList));
@@ -482,7 +482,12 @@ useEffect(()=>{
                       if (roomId !== "!YeHVKSqvWeKjYGrtub:matrix.org") {
                         return (
                           <>
-                            {temp ? <MessageSeparator style={{marginTop:20}} content={temp} /> : null}
+                            {temp ? (
+                              <MessageSeparator
+                                style={{ marginTop: 20 }}
+                                content={temp}
+                              />
+                            ) : null}
                             <Message
                               key={i + 1}
                               style={
@@ -498,7 +503,9 @@ useEffect(()=>{
                                 direction: di, // outgoing -- ur sending
                                 position: "last",
                               }}
-                            ></Message>
+                            >
+                            
+                            </Message>
                             <span
                               style={
                                 di == "outgoing"
@@ -526,16 +533,17 @@ useEffect(()=>{
                                 style={{ marginRight: 20, marginTop: 18 }}
                                 model={{
                                   message: elm.msg.slice(5).toString(),
-                                  sentTime: "15 mins ago",
+                                  sentTime: getPostTime(elm.timeStamp),
                                   sender: "Zoe",
                                   direction: di, // outgoing -- ur sending
                                   position: "last",
                                 }}
                               >
+                              
                               </Message>
                               <span style={{ fontSize: 9, marginLeft: "95%" }}>
                                 {getPostTime(elm.timeStamp)}
-                              </span> 
+                              </span>
                             </>
                           );
                         }
