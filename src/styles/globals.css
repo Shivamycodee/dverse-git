@@ -1063,31 +1063,48 @@ body::-webkit-scrollbar-thumb {
   }
 
 
-  /* uploader css  */
+ /* video css  */
 
-  form{
+ .videoCall-holder{
+   background-color: black;
+   min-height: calc(123vh - 173px);
+    overflow: auto;
+  max-height: calc(123vh - 173px);
+ }
+
+.videos {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px dashed #1475cf;
-  height: 300px;
-  width: 500px;
-  cursor: pointer;
-  border-radius: 5px;
+  justify-content: space-evenly ;
+  padding: 50px;
 }
 
-.uploaded-row{
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  border-radius: 5px;
-  background-color: #e9f0ff;
+
+.videos video{
+  width:670px;
+  height: 500px;
+  border-radius: 20px;
+  background-color: rgb(15, 23, 42);
 }
 
-.upload-content{
+.video-controls{
+    background: linear-gradient(135deg, #866ee7, #ea60da, #ffffff);
   display: flex;
-  align-items: center;
+  justify-content: space-evenly;
+  width:70%;
+  border-radius: 20px;
+  margin:auto;
+  padding: 2%;
+
 }
+
+.video-controls button{
+  height: fit-content;
+}
+
+.gradient-border {
+  /* display: inline-block; */
+  background: linear-gradient(135deg, #866ee7, #ea60da, #ffffff);
+  border-radius: 20px;
+  padding: 0.7px;
+}
+

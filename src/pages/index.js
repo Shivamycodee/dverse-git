@@ -69,26 +69,70 @@ function Home() {
       <div className={Styles.gridContainer}>
         <Link href="chat">
           <div className={Styles.cardWhite}>
-            <Image height={10000} width={10000} src="/images/coverImages/roboChat.jpg" alt="chat" />
+            <Image
+              height={10000}
+              width={10000}
+              src="/images/coverImages/roboChat.jpg"
+              alt="chat"
+            />
+
+            <div className={Styles.cardOverlay}>
+              <div style={{ marginBottom: 140 }} className={Styles.cardText}>
+                CHAT
+              </div>
+            </div>
           </div>
         </Link>
+
         <Link href="videocall">
           <div className={Styles.cardWhite}>
-            <Image height={10000} width={10000} src="/images/coverImages/videoCall01.jpg" alt="chat" />
+            <Image
+              height={10000}
+              width={10000}
+              src="/images/coverImages/videoCall01.jpg"
+              alt="videocall"
+            />
+            <div className={Styles.cardOverlay}>
+              <div style={{ marginBottom: 140 }} className={Styles.cardText}>
+                VIDEO CALL
+              </div>
+            </div>
           </div>
         </Link>
+
         <Link href="livestream">
           <div className={Styles.cardWhite}>
-            <Image height={10000} width={10000} src="/images/coverImages/liveStream.jpg" alt="chat" />
+            <Image
+              height={10000}
+              width={10000}
+              src="/images/coverImages/liveStream.jpg"
+              alt="livestream"
+            />
+            <div className={Styles.cardOverlay}>
+              <div style={{ marginBottom: 140 }} className={Styles.cardText}>
+                LIVESTREAM
+              </div>
+            </div>
           </div>
         </Link>
+
         <Link href="drive">
           <div className={Styles.cardWhite}>
-            <Image height={10000} width={10000} src="/images/coverImages/videoCall03.jpg" alt="chat" />
+            <Image
+              height={10000}
+              width={10000}
+              src="/images/coverImages/videoCall03.jpg"
+              alt="DRIVE"
+            />
+            <div className={Styles.cardOverlay}>
+              <div style={{ marginBottom: 140 }} className={Styles.cardText}>
+                STORAGE DRIVE 📁
+              </div>
+            </div>
           </div>
         </Link>
       </div>
-      <Roadmap/>
+      <Roadmap />
       <br></br>
       <br></br>
       <br></br>

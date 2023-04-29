@@ -176,3 +176,13 @@ mongo cluster with 8758
                   onSend={() => sendHandler()}
                 />
               </ChatContainer> */}
+
+
+   {/* <button onClick={startWebcam}>Start webcam</button> */}
+          {/* <button onClick={createCall} disabled={!localStream}>
+            Create Offer
+          </button> */}
+
+            <button onClick={hangUp} disabled={!localStream}>
+                Hangup
+              </button>

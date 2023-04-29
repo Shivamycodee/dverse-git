@@ -13,7 +13,7 @@ function Roadmap() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-          date="2011 - present"
+          date="2023 May"
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
         //   icon={<WorkIcon />}
         >
@@ -25,6 +25,7 @@ function Roadmap() {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
+          // style={{color:"white"}}
           className="vertical-timeline-element--work"
           date="2010 - 2011"
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}

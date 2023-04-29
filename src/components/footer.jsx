@@ -27,7 +27,7 @@ function Footer() {
               </p>
 
               <a
-                href="https://shivams-organization.gitbook.io/dverse-docs/"
+                href="https://shivams-organization.gitbook.io/dverse-docs/~/changes/SbFY9DcNxKmmcODmg0TI/"
                 className="btn-know"
                 target="_blank"
                 rel="noreferrer"
