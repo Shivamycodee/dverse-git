@@ -88,7 +88,7 @@ export default function MatrixContextProvider({children}) {
     initializeMatrix();
 
     const updateMessages = (matrixRoom) => {
-
+     console.log(histroyFlag)
       if (!matrixRoom) return;
       const newMessages = matrixRoom
         .getLiveTimeline()

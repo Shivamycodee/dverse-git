@@ -5,7 +5,7 @@ import { useGlobalContext } from "../../context/prime";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const uploadSection = () => {
+const UploadSection = () => {
 
   const { uploadData, fetchFile } = UsedGlobalContext();
 
@@ -105,4 +105,4 @@ const uploadSection = () => {
   );
 };
 
-export default uploadSection;
+export default UploadSection;
