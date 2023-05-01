@@ -15,11 +15,11 @@ import Roadmap from '../components/rodamap'
 
 
 const showStr = [
-  "Welcome to Dverse! the decentralized universe! 🚀",
+  "Welcome to Dverse! the decentralized universe!",
   "Decentralized data store, chat, video call, and more.",
   "From the stars to your screen, Dverse brings you decentralized awesomeness",
-  "Enter the dark sky of Dverse and discover decentralized wonders. 🌑",
-  "Dverse: where decentralization meets the universe! 🪐",
+  "Enter the dark sky of Dverse and discover decentralized wonders.",
+  "Dverse: where decentralization meets the universe!",
 ];
 
 function Home() {
@@ -89,7 +89,7 @@ function Home() {
             <Image
               height={10000}
               width={10000}
-              src="/images/coverImages/videoCall01.jpg"
+              src="/images/coverImages/videoCall03.jpg"
               alt="videocall"
             />
             <div className={Styles.cardOverlay}>
@@ -119,14 +119,14 @@ function Home() {
         <Link href="drive">
           <div className={Styles.cardWhite}>
             <Image
-              height={10000}
-              width={10000}
-              src="/images/coverImages/videoCall03.jpg"
+              height={100000}
+              width={100000}
+              src="/images/coverImages/driveimg.jpg"
               alt="DRIVE"
             />
             <div className={Styles.cardOverlay}>
               <div style={{ marginBottom: 140 }} className={Styles.cardText}>
-                STORAGE DRIVE 📁
+                STORAGE DRIVE
               </div>
             </div>
           </div>

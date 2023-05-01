@@ -102,7 +102,7 @@ function TopBar() {
                 <NavDropdown.Item href="livestream">Stream</NavDropdown.Item>
                 <NavDropdown.Item href="drive">Store</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#roadmap">Roadmap</Nav.Link>
+              {/* <Nav.Link href="#roadmap">Roadmap</Nav.Link> */}
             </Nav>
             <Nav>
               <ConnectButton></ConnectButton>
