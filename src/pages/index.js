@@ -119,9 +119,9 @@ function Home() {
         <Link href="drive">
           <div className={Styles.cardWhite}>
             <Image
-              height={100000}
-              width={100000}
-              src="/images/coverImages/driveimg.jpg"
+              height={10000}
+              width={10000}
+              src="/images/coverImages/driveImg.jpg"
               alt="DRIVE"
             />
             <div className={Styles.cardOverlay}>

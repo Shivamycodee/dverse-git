@@ -171,13 +171,13 @@ function TopBar() {
                 >
                   <span className="sp">Change Profile</span>
                 </button>
-                <button
+                {/* <button
                   style={{ width: "100%" }}
                   data-label="Register"
                   className="rainbow-hover"
                 >
                   <span className="sp">Share</span>
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
