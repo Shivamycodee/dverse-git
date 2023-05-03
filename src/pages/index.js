@@ -121,7 +121,7 @@ function Home() {
             <Image
               height={100000}
               width={100000}
-              src="/images/coverImages/driveimg.jpg"
+              src="/images/coverImages/drive.jpg"
               alt="DRIVE"
             />
             <div className={Styles.cardOverlay}>
