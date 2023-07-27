@@ -10,6 +10,20 @@ class MyDocument extends Document {
             src="https://kit.fontawesome.com/ccd84e7d2b.js"
             crossOrigin="anonymous"
           />
+
+
+    {/*Google analytics... */ }
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VDJC5JMTV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0VDJC5JMTV');
+</script>
+
+
         </Head>
         <body>
           <Main />
