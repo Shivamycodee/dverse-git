@@ -52,7 +52,6 @@ function Layout({children}) {
         {shootingStars}
       </div>
       {isLazy ? null:<Navbar />}
-      {/* <Navbar /> */}
       {children}
     </>
   );
