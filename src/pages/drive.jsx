@@ -11,12 +11,17 @@ function Drive() {
   const {address} = useMatrixContext();
 
   return address ? (
+    <>
+    <div style={{textAlign:'center',marginTop:'10px'}} >
+    <h5 style={{color:'red'}} >Our free file upload service just went on an endless vacation! If you want to upload now, it’s either pay up or send your files via carrier pigeon! 🕊️💸</h5>
+    </div>
     <div className="drive-holder">
       <DriveComponent />
       <div className="data-css">
         <DriveData />
       </div>
     </div>
+    </>
   ) : (
     <div>
       <div
