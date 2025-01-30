@@ -19,15 +19,25 @@ import {
   getDoc,
 } from "firebase/firestore";
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyA7THiYoQqddpl_NRTRizh3Xg9ox6hUcc8",
+//   authDomain: "nimo-7a52f.firebaseapp.com",
+//   databaseURL: "https://nimo-7a52f-default-rtdb.firebaseio.com",
+//   projectId: "nimo-7a52f",
+//   storageBucket: "nimo-7a52f.appspot.com",
+//   messagingSenderId: "932110078099",
+//   appId: "1:932110078099:web:ae67041d4bc27ee1b5fd66",
+//   measurementId: "G-NZ5M5N4HMP",
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyA7THiYoQqddpl_NRTRizh3Xg9ox6hUcc8",
-  authDomain: "nimo-7a52f.firebaseapp.com",
-  databaseURL: "https://nimo-7a52f-default-rtdb.firebaseio.com",
-  projectId: "nimo-7a52f",
-  storageBucket: "nimo-7a52f.appspot.com",
-  messagingSenderId: "932110078099",
-  appId: "1:932110078099:web:ae67041d4bc27ee1b5fd66",
-  measurementId: "G-NZ5M5N4HMP",
+  apiKey: "AIzaSyBfKuEAFDW5i4t0gA0ETbOB1fD__G9aGnI",
+  authDomain: "dverse-git.firebaseapp.com",
+  projectId: "dverse-git",
+  storageBucket: "dverse-git.firebasestorage.app",
+  messagingSenderId: "704722943191",
+  appId: "1:704722943191:web:528e82698fc1e4cf218492",
+  measurementId: "G-BWJ72D2G4N"
 };
 
 function VideoCallComponent() {
