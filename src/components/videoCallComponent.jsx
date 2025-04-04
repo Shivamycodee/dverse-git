@@ -36,8 +36,8 @@ const firebaseConfig = {
   projectId: "dverse-git",
   storageBucket: "dverse-git.firebasestorage.app",
   messagingSenderId: "704722943191",
-  appId: "1:704722943191:web:528e82698fc1e4cf218492",
-  measurementId: "G-BWJ72D2G4N"
+  appId: "1:704722943191:web:b266041eb2766566218492",
+  measurementId: "G-FJQ9LWCFJY"
 };
 
 function VideoCallComponent() {
@@ -245,12 +245,12 @@ function VideoCallComponent() {
         <div className="videos">
           <span>
             <div className="gradient-border">
-              <video id="webcamVideo" ref={webcamVideo} autoPlay playsInline />
+              <video id="webcamVideo" style={{transform:"scaleX(-1)"}} ref={webcamVideo} autoPlay playsInline />
             </div>
           </span>
           <span>
             <div className="gradient-border">
-              <video id="remoteVideo" ref={remoteVideo} autoPlay playsInline />
+              <video id="remoteVideo" ref={remoteVideo} style={{transform:"scaleX(-1)"}} autoPlay playsInline />
             </div>
           </span>
         </div>

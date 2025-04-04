@@ -6,7 +6,7 @@ function Footer() {
       <main className="main-section"></main>
 
       <footer className="footer-sec">
-        <div className="main">
+        <div style={{display:'flex',justifyContent:'space-between'}} className="main">
           <div className="logo row">
             <div className="footer-header">
               {/* <img
@@ -37,18 +37,16 @@ function Footer() {
             </div>
           </div>
 
-          <div className="office row">
+          {/* <div className="office row">
             <div className="footer-header">
-              {/* <h2>ｏｆｆｉｃｅ</h2> */}
               <h1 style={{ letterSpacing: 7 }}>OFFICE</h1>
             </div>
             <div className="office-des">
               <a href="https://www.gmail.com" target="_blank" rel="noreferrer">
                 dverse@gmail.com
               </a>
-              <p className="num">+91-8758128274</p>
             </div>
-          </div>
+          </div> */}
 
           <div className="newsletter row">
             <div className="footer-header">
@@ -60,7 +58,8 @@ function Footer() {
 
               <ul className="wrapper">
                 <a
-                  href="https://www.linkedin.com/in/shivam-yadav-917863224/"
+                  // href="https://www.linkedin.com/in/shivam-yadav-917863224/"
+                  href="https://www.linkedin.com/in/devendrapradhan/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -72,7 +71,8 @@ function Footer() {
                   </li>
                 </a>
                 <a
-                  href="http://github.com/shivamycodee"
+                  // href="http://github.com/shivamycodee"
+                  href="https://github.com/Dkp0"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -83,22 +83,22 @@ function Footer() {
                     </span>
                   </li>
                 </a>
-                <a href="#" target="_blank" rel="noreferrer">
+                {/* <a href="#" target="_blank" rel="noreferrer">
                   <li className="icon facebook">
                     <span className="tooltip">Devfolio</span>
                     <span>
                       <i className="fab fa-facebook-f"></i>
                     </span>
                   </li>
-                </a>
-                <a href="#" target="_blank" rel="noreferrer">
+                </a> */}
+                {/* <a href="#" target="_blank" rel="noreferrer">
                   <li className="icon instagram">
                     <span className="tooltip">Instagram</span>
                     <span>
                       <i className="fab fa-instagram"></i>
                     </span>
                   </li>
-                </a>
+                </a> */}
                 <a
                   href="https://twitter.com/VibeWeb3"
                   target="_blank"
@@ -112,7 +112,7 @@ function Footer() {
                   </li>
                 </a>
                 <a
-                  href="https://devfolio.co/@shivam_code"
+                  href="https://devfolio.co/@Shivamycodee"
                   target="_blank"
                   rel="noreferrer"
                 >

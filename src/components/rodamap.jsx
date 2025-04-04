@@ -13,7 +13,8 @@ function Roadmap() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-          date="May 2023"
+          // date="May 2023"
+          date="April 2025"
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           //   icon={<WorkIcon />}
         >
@@ -30,7 +31,8 @@ function Roadmap() {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           contentStyle={{ color: "#fff" }}
-          date="June 2023"
+          // date="June 2023"
+          date="June 2025"
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
         >
           <h4
@@ -44,7 +46,8 @@ function Roadmap() {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="July 2023"
+          // date="July 2023"
+          date="July 2025"
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           contentStyle={{ color: "#fff" }}
         >
@@ -61,7 +64,8 @@ function Roadmap() {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="August 2023"
+          // date="August 2023"
+          date="August 2025"
           contentStyle={{ color: "#fff" }}
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
         >
@@ -78,7 +82,8 @@ function Roadmap() {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="September 2023"
+          // date="September 2023"
+          date="September 2025"
           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
           contentStyle={{ color: "#fff" }}
         >
@@ -95,7 +100,8 @@ function Roadmap() {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="October 2023"
+          // date="October 2023"
+          date="October 2025"
           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
           contentStyle={{ color: "#fff" }}
         >
