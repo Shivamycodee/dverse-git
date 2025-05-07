@@ -58,7 +58,8 @@ function Footer() {
 
               <ul className="wrapper">
                 <a
-                  href="https://www.linkedin.com/in/shivam-yadav-917863224/"
+                  // href="https://www.linkedin.com/in/shivam-yadav-917863224/"
+                  href="https://www.linkedin.com/in/devendrapradhan/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -70,7 +71,8 @@ function Footer() {
                   </li>
                 </a>
                 <a
-                  href="http://github.com/shivamycodee"
+                  // href="http://github.com/shivamycodee"
+                  href="https://github.com/Dkp0"
                   target="_blank"
                   rel="noreferrer"
                 >
