@@ -27,8 +27,7 @@ function Footer() {
               </p>
 
               <a
-                // href="https://shivams-organization.gitbook.io/dverse-docs/~/changes/SbFY9DcNxKmmcODmg0TI/"
-                href="https://devendra.gitbook.io/devendra-docs/dverse/"
+                href="https://shivams-organization.gitbook.io/dverse-docs/~/changes/SbFY9DcNxKmmcODmg0TI/"
                 className="btn-know"
                 target="_blank"
                 rel="noreferrer"
@@ -100,8 +99,7 @@ function Footer() {
                     </span>
                   </li>
                 </a> */}
-
-                {/* <a
+                <a
                   href="https://twitter.com/VibeWeb3"
                   target="_blank"
                   rel="noreferrer"
@@ -112,9 +110,8 @@ function Footer() {
                       <i className="fab fa-twitter"></i>
                     </span>
                   </li>
-                </a> */}
-
-                {/* <a
+                </a>
+                <a
                   href="https://devfolio.co/@Shivamycodee"
                   target="_blank"
                   rel="noreferrer"
@@ -122,11 +119,11 @@ function Footer() {
                   <li className="icon facebook">
                     <span className="tooltip">Devfolio</span>
                     <span>
+                      {/* <i className="fab fa-codepen"></i> */}
                       <i class="fa-solid fa-d"></i>
                     </span>
                   </li>
-                </a> */}
-
+                </a>
               </ul>
 
               {/* icons end  */}
