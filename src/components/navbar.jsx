@@ -93,7 +93,10 @@ function TopBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="https://shivams-organization.gitbook.io/dverse-docs/~/changes/SbFY9DcNxKmmcODmg0TI/" target="_blank">
+              <Nav.Link
+              //  href="https://shivams-organization.gitbook.io/dverse-docs/~/changes/SbFY9DcNxKmmcODmg0TI/" 
+              href="https://devendra.gitbook.io/devendra-docs/dverse/"
+              target="_blank">
                 Docs
               </Nav.Link>
               <NavDropdown title="Services" id="basic-nav-dropdown">
